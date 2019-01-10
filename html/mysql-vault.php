@@ -8,7 +8,8 @@
 {{ end }}
 
 $servername = "35.244.31.183";
-
+$username = "abcd"
+$password = "abcd"
 try {
     $conn = new PDO("mysql:host=$servername;dbname=my_db", $username, $password);
     // set the PDO error mode to exception
