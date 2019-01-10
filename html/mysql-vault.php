@@ -1,12 +1,5 @@
 <?php
 
-{{- with secret "secret/myapp/config" }}
-  <ul>
-  <li><pre>$username: {{ .Data.username }}</pre></li>
-  <li><pre>$password: {{ .Data.password }}</pre></li>
-  </ul>
-{{ end }}
-
 $servername = "35.244.31.183";
 $username = "abcd"
 $password = "abcd"
