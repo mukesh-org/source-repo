@@ -113,4 +113,4 @@ spec:
 
           volumeMounts:
           - name: shared-data
-            mountPath: /var/www/mysql-secret
+            mountPath: /var/www/html
