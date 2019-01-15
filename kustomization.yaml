@@ -3,3 +3,8 @@ resources:
  - service.yaml
  - serviceaccount.yaml
  - crolebinding.yaml
+configMapGenerator:
+- name: example-vault-agent-config
+  files:
+  - vault-agent-config.hcl
+  - consul-template-config.hcl
