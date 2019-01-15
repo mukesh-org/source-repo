@@ -3,12 +3,12 @@ kind: Service
 metadata:
   name: mysql
   labels:
-    app: php-apache
+    app: kustomize-test
 spec:
   ports:
     - port: 3306
   selector:
-    app: php-apache
+    app: kustomize-test
     tier: mysql
   clusterIP: None
 ---
@@ -17,7 +17,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: mysql-pv-claim
   labels:
-    app: php-apache
+    app: kustomize-test
 spec:
   accessModes:
     - ReadWriteOnce
@@ -28,20 +28,20 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: php-apache-mysql
+  name: kustomize-test-mysql
   labels:
-    app: php-apache
+    app: kustomize-test
 spec:
   selector:
     matchLabels:
-      app: php-apache
+      app: kustomize-test
       tier: mysql
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        app: php-apache
+        app: kustomize-test
         tier: mysql
     spec:
       containers:
