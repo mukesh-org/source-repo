@@ -1,8 +1,6 @@
 resources:
  - deployment.yaml
  - service.yaml
- - serviceaccount.yaml
- - crolebinding.yaml
 configMapGenerator:
 - name: example-vault-agent-config
   files:
