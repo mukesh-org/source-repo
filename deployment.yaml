@@ -60,7 +60,7 @@ spec:
             - name: VAULT_CACERT
               value: /etc/vault/tls/ca.crt
             - name: VAULT_ROLE
-              value: myapp-role
+              value: agent-role
 
           # Run the Vault agent
           args:
