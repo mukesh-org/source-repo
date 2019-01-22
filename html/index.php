@@ -5,7 +5,7 @@
 <h1>This is a PHP page using Skaffold Docker image and FLUX</h1>
 
 <?php
-echo "Hello Kubernetes! PR jobtest123!! postjob-check 123456789";
+echo "Hello Kubernetes! PR jobtest123--ok2test!! postjob-check 123456789";
 ?> 
   
 </body>
