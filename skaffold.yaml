@@ -9,7 +9,7 @@ build:
   kaniko:
     buildContext:
     # localDir: {}
-      gcsBucket: mukesh-test-bucket
+      gcsBucket: searce-sandbox-prow-logs-muk
     pullSecret: /secrets/gcloud/skaffold-secret.json
    # namespace: build-helloworld
     cache: {}
