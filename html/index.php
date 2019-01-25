@@ -2,7 +2,7 @@
 <html>
 <body>
 
-<h1> Development branch it works</h1>
+<h1> Development branch into master merge</h1>
 
 <?php
 echo "Hello Kubernetes! PR presubmit job!!!";
