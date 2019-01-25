@@ -2,11 +2,9 @@
 
 mkdir /root/.ssh
 chmod 700 /root/.ssh
-cp /secrets/flux/id_rsa /root/.ssh/id_rsa
+
 cp /secrets/repo-key/ssh-secret /root/.ssh/id_rsa1
-chmod 600 /root/.ssh/id_rsa
 chmod 600 /root/.ssh/id_rsa1
-ssh-add ~/.ssh/id_rsa
 ssh-add ~/.ssh/id_rsa1
 
 git remote add origin git@github.com:mukesh-org/$REPO_NAME.git
