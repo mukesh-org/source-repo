@@ -2,10 +2,10 @@
 <html>
 <body>
 
-<h1> Development branch 1 </h1>
+<h1> Development branch it works</h1>
 
 <?php
-echo "Hello Kubernetes! PR job!!!---job test 123 /test";
+echo "Hello Kubernetes! PR presubmit job!!!";
 ?> 
   
 </body>
