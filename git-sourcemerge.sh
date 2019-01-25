@@ -6,9 +6,13 @@ git remote add origin git@github.com:mukesh-org/$REPO_NAME.git
 ssh-keyscan -H github.com >> ~/.ssh/known_hosts
 
 PR=$PULL_NUMBER
+BASE=$PULL_BASE_REF
+
+
 ## resolve any merge conflicts if there are any
 git fetch origin master
 git merge FETCH_HEAD
 
 git checkout master
-git merge --no-ff development
+git merge --no-ff "$BASE"
+git push -u origin master
