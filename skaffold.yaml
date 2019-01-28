@@ -9,7 +9,7 @@ build:
   kaniko:
     buildContext:
     # localDir: {}
-      gcsBucket: searce-sandbox-prow-logs-muk
+      gcsBucket: searce-sandbox-skaffold_context
     pullSecret: /secrets/gcloud/skaffold-secret.json
    # namespace: build-helloworld
     cache: {}
