@@ -9,7 +9,7 @@ build:
       #context: .
   kaniko:
     buildContext:
-      gcsBucket: ${SKAFFOLD_BUCKET_NAME}
+      gcsBucket: '%env(SKAFFOLD_BUCKET_NAME)%'
     pullSecret: /secrets/gcloud/skaffold-secret.json
     cache: {}
 
