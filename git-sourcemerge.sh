@@ -3,7 +3,7 @@
 mkdir /root/.ssh
 chmod 700 /root/.ssh
 
-cp /secrets/repo-key/ssh-secret /root/.ssh/id_rsa1
+cp /secrets/repo-key/ssh-secret /root/.ssh/id_rsa-sourcerepo
 chmod 600 /root/.ssh/id_rsa-sourcerepo
 ssh-add ~/.ssh/id_rsa-sourcerepo
 
