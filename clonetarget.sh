@@ -7,6 +7,9 @@ cp /secrets/git/targetgit-ssh-secret /root/.ssh/targetgit-ssh-secret
 chmod 600 /root/.ssh/targetgit-ssh-secret
 ssh-add /root/.ssh/targetgit-ssh-secret
 
+git config --global user.email "you@example.com"
+git config --global user.name "ci-robot"
+
 cat <<\EOF >> ~/.ssh/config
 Host $TARGET_REPO_NAME github.com
 	HostName github.com
