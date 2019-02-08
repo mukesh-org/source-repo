@@ -3,7 +3,7 @@
 mkdir /root/.ssh
 chmod 700 /root/.ssh
 
-cp /secrets/git/target_ssh_secret /root/.ssh/targetgit-ssh-secret
+cp /secrets/git/targetgit-ssh-secret /root/.ssh/targetgit-ssh-secret
 chmod 600 /root/.ssh/targetgit-ssh-secret
 ssh-add /root/.ssh/targetgit-ssh-secret
 
