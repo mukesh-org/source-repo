@@ -1,12 +1,9 @@
 # base this image on the PHP image that comes with Apache https://hub.docker.com/_/php/
 FROM php:7.0-apache
 
-# install mysql-client and curl for our data init script
-# install the PHP extension pdo_mysql for our connection script
-# clean up
 RUN apt-get update \
-  && apt-get install -y mysql-client curl \
-  && docker-php-ext-install pdo_mysql \
+  && apt-get install -y curl \
+  && docker-php-ext-install \
   && apt-get clean \
   && rm -rf /var/cache/apt/archives
 
