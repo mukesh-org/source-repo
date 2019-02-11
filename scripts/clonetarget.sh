@@ -1,7 +1,6 @@
 #!/bin/sh
 set -e
 
-chmod 600 "$TARGET_SSH_PATH"
 eval $(ssh-agent)
 ssh-add "$TARGET_SSH_PATH"
 
