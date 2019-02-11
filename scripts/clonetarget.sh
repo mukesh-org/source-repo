@@ -1,14 +1,16 @@
 #!/bin/sh
 set -e
 
-eval $(ssh-agent)
-ssh-add "$TARGET_SSH_PATH"
+TARGET_KEY_NAME=$(echo "$TARGET_SSH_PATH" | awk -F/ '{print $NF}')
+cp "$TARGET_SSH_PATH" ~/.ssh/"$TARGET_KEY_NAME"
+eval "$(ssh-agent)"
+ssh-add ~/.ssh/"$TARGET_KEY_NAME"
 
 cat <<\EOF >> ~/.ssh/config
 Host $TARGET_REPO_NAME github.com
 	HostName github.com
 	User git
-	IdentityFile $TARGET_SSH_PATH
+	IdentityFile ~/.ssh/$TARGET_KEY_NAME
 EOF
 chmod 400 ~/.ssh/config
 
