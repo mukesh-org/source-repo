@@ -3,16 +3,14 @@
 #!/bin/sh
 set -e
 
-cp /secrets/git/targetgit-ssh-secret /root/.ssh/targetgit-ssh-secret
-chmod 600 /root/.ssh/targetgit-ssh-secret
 eval $(ssh-agent)
-ssh-add /root/.ssh/targetgit-ssh-secret
+ssh-add "$TARGET_SSH_PATH"
 
 cat <<\EOF >> ~/.ssh/config
 Host $TARGET_REPO_NAME github.com
 	HostName github.com
 	User git
-	IdentityFile ~/.ssh/targetgit-ssh-secret
+	IdentityFile $TARGET_SSH_PATH
 EOF
 chmod 400 ~/.ssh/config
 
