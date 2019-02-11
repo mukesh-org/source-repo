@@ -6,8 +6,6 @@ set -e
 REPO_DIR=../"$TARGET_REPO_NAME"
 cd "${REPO_DIR}"
 
-git remote add origin git@github.com:"$GITHUB_ORG_NAME"/"$TARGET_REPO_NAME".git
-
 branch=$PULL_NUMBER
 
 git checkout -b "$branch"
