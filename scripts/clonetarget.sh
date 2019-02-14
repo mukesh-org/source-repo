@@ -3,7 +3,8 @@ set -e
 
 TARGET_KEY_NAME=$(echo "$TARGET_SSH_PATH" | awk -F/ '{print $NF}')
 export TARGET_KEY_NAME
-source ~/.bashrc
+echo "export TARGET_KEY_NAME=$TARGET_KEY_NAME" >> /etc/bash.bashrc
+source /etc/bash.bashrc
 
 cp "$TARGET_SSH_PATH" ~/.ssh/"$TARGET_KEY_NAME"
 eval "$(ssh-agent)"
