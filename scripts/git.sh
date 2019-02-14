@@ -12,3 +12,4 @@ git checkout -b "$branch"
 git add .
 git commit -m 'kustomize file updated'
 git push origin "$branch"
+echo "Code pushed successfully"
