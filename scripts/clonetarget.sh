@@ -21,3 +21,4 @@ repository="git@github.com:$GITHUB_ORG_NAME/$TARGET_REPO_NAME.git"
 localFolder="/home/prow/go/src/github.com/$GITHUB_ORG_NAME/$TARGET_REPO_NAME"
 
 git clone "$repository" "$localFolder"
+echo "Target repo cloned successfully"
