@@ -1,15 +1,16 @@
-#!/bin/sh
+#!/bin/bash
 set -e
 
 TARGET_KEY_NAME=$(echo "$TARGET_SSH_PATH" | awk -F/ '{print $NF}')
 export TARGET_KEY_NAME
 echo "export TARGET_KEY_NAME=$TARGET_KEY_NAME" >> ~/.bashrc
+source ~/.bashrc
 
 cp "$TARGET_SSH_PATH" ~/.ssh/"$TARGET_KEY_NAME"
 eval "$(ssh-agent)"
 ssh-add ~/.ssh/"$TARGET_KEY_NAME"
 
-cat <<\EOF >> ~/.ssh/config
+cat <<EOF >> ~/.ssh/config
 Host $TARGET_REPO_NAME github.com
 	HostName github.com
 	User git
