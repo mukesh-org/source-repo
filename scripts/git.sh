@@ -5,8 +5,8 @@ set -e
 
 REPO_DIR=../"$TARGET_REPO_NAME"
 cd "${REPO_DIR}" || exit
-echo "$PULL_REFS" > Pull_refs.txt
-
+# echo "$PULL_REFS" > Pull_refs.txt
+echo "$PULL_REFS"
 branch=source-PR-"$PULL_NUMBER"
 
 git checkout -b "$branch"
