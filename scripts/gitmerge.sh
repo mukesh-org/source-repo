@@ -3,17 +3,9 @@
 #!/bin/bash
 set -e
 
-chmod 600 "$TARGET_SSH_PATH"
-eval $(ssh-agent)
-ssh-add "$TARGET_SSH_PATH"
-
-cat <<\EOF >> ~/.ssh/config
-Host $TARGET_REPO_NAME github.com
-	HostName github.com
-	User git
-	IdentityFile $TARGET_SSH_PATH
-EOF
-chmod 400 ~/.ssh/config
+REPO_DIR=../"$TARGET_REPO_NAME"
+cd "${REPO_DIR}" || exit
+echo "$PULL_REFS" > Pull_refs.txt
 
 branch=source-PR-"$PULL_NUMBER"
 
