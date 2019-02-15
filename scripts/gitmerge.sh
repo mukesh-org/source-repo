@@ -1,6 +1,6 @@
 ### Shell script for performing GitHub merge PR branch to master branch ###
 
-#!/bin/sh
+#!/bin/bash
 set -e
 
 chmod 600 "$TARGET_SSH_PATH"
@@ -15,7 +15,7 @@ Host $TARGET_REPO_NAME github.com
 EOF
 chmod 400 ~/.ssh/config
 
-branch="$PULL_NUMBER"
+branch=source-PR-"$PULL_NUMBER"
 
 ## resolve any merge conflicts if there are any
 git checkout "$branch"
