@@ -17,3 +17,4 @@ git merge --no-ff --no-commit "$branch"
 git status
 git commit -m "merge $branch branch"
 git push -u origin master
+echo "$branch Merged successfully to master"
