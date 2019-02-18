@@ -16,5 +16,6 @@ git checkout -b "$branch"
 git add .
 git status
 git commit -m 'kustomize file and PULL_REF updated'
+git pull origin "$branch"
 git push origin "$branch"
 echo "Code pushed successfully"
