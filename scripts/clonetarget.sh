@@ -29,4 +29,5 @@ cd "${REPO_DIR}" || exit
 
 branch=source-PR-"$PULL_NUMBER"
 git checkout -b "$branch"
+git branch
 echo "checked out to $branch branch"
