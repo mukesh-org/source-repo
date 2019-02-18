@@ -11,7 +11,7 @@ echo Pull_refs="$(cat Pull_refs.txt)"
 
 branch=source-PR-"$PULL_NUMBER"
 
-git add .
+git add -A
 git status
 git commit -m 'kustomize file and PULL_REF updated'
 git push origin "$branch"
