@@ -1,7 +1,6 @@
 ### Shell script for performing GitHub commands to merge content to PR named branch ###
 
 #!/bin/bash
-set -e
 
 REPO_DIR=../"$TARGET_REPO_NAME"
 cd "${REPO_DIR}" || exit
