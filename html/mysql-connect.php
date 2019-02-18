@@ -3,6 +3,7 @@
 // it's aid for actor_id in our Sakila database. Let's make it
 // default to 1, and cast it to an integer as to avoid SQL injection
 // and/or related security problems.
+// just for prow test
 if (isset($_GET['aid']) && is_numeric($_GET['aid'])) {
     $aid = (int) $_GET['aid'];
 } else {
@@ -13,7 +14,7 @@ if (isset($_GET['aid']) && is_numeric($_GET['aid'])) {
 $mysql_host = getenv('MYSQL_HOST');                   
 $username = getenv('MYSQL_USER');
 $password = getenv('MYSQL_PASSWORD');
-$dbname = 'sakila';
+$dbname = 'sakila321';
 
 // Create connection
 $mysqli = new mysqli($mysql_host, $username, $password, $dbname);
