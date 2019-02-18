@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-gcloud auth activate-service-account --key-file /secrets/gcloud/skaffold-secret.json
+gcloud auth activate-service-account --key-file "$GOOGLE_APPLICATION_CREDENTIALS"
 gcloud auth configure-docker
 
 ./clonetarget.sh
