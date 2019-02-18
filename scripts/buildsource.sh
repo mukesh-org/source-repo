@@ -4,7 +4,7 @@ set -e
 gcloud auth activate-service-account --key-file "$GOOGLE_APPLICATION_CREDENTIALS"
 gcloud auth configure-docker
 
-./clonetarget.sh
+./scripts/clonetarget.sh
 
 REPO_DIR=../"$REPO_NAME"
 cd "${REPO_DIR}" || exit
