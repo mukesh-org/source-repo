@@ -6,12 +6,8 @@ cd "${REPO_DIR}" || exit
 
 branch=source-PR-"$PULL_NUMBER"
 git checkout "$branch"
-git pull origin "$branch"
 
 target_pull_refs="$(cat Pull_refs.txt)"
-
-echo TargetBranch-Pull_refs="$target_pull_refs"
-echo Actual PR_REF="$PULL_REFS"
 
 if [ "$PULL_REFS" == "$target_pull_refs" ]
 then
@@ -20,5 +16,7 @@ then
     echo "Kubeval Test successful"
 else
     echo "PR-REF didn't match. wait for build job to finish and RE-RUN test job"
+    echo $branch-PR_REF="$target_pull_refs"
+    echo Actual-PR_REF="$PULL_REFS"
     exit 1
 fi

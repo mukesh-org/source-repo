@@ -1,5 +1,4 @@
-### Shell script for performing GitHub merge PR branch to master branch ###
-
+### Shell script for performing GitHub merge source-PR-$PULL_NUMBER --> master branch ###
 #!/bin/bash
 set -e
 

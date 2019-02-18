@@ -23,11 +23,3 @@ localFolder="/home/prow/go/src/github.com/$GITHUB_ORG_NAME/$TARGET_REPO_NAME"
 
 git clone "$repository" "$localFolder"
 echo "Target repo cloned successfully"
-
-REPO_DIR=../"$TARGET_REPO_NAME"
-cd "${REPO_DIR}" || exit
-
-branch=source-PR-"$PULL_NUMBER"
-git checkout -b "$branch"
-git branch
-echo "checked out to $branch branch"

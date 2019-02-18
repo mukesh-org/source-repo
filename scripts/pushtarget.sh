@@ -1,15 +1,17 @@
-### Shell script for performing GitHub commands to merge content to PR named branch ###
-
+### Shell script for performing GitHub push commands to merge content to "source-PR-named" branch ###
 #!/bin/bash
 
 REPO_DIR=../"$TARGET_REPO_NAME"
 cd "${REPO_DIR}" || exit
 
 echo "$PULL_REFS" > Pull_refs.txt
-echo Actual-pull-ref="$PULL_REFS"
-echo Pull_refs="$(cat Pull_refs.txt)"
+echo Actual-PULL_REFS="$PULL_REFS"
 
 branch=source-PR-"$PULL_NUMBER"
+
+git checkout -b "$branch"
+git branch
+echo "checked out to $branch branch"
 
 git add -A
 git status
