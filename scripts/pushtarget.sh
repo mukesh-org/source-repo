@@ -14,5 +14,5 @@ branch=source-PR-"$PULL_NUMBER"
 git add -A
 git status
 git commit -m 'kustomize file and PULL_REF updated'
-git push origin "$branch"
+git push -f origin "$branch"
 echo "Code pushed successfully"
