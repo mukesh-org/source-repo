@@ -17,3 +17,6 @@ skaffold run
 
 ## Git Push the kustomize files to target-repo
 ./scripts/pushtarget.sh
+
+## Test the YAML file generated using Kubeval
+./scripts/testtarget.sh
