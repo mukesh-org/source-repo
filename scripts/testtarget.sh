@@ -5,7 +5,6 @@ REPO_DIR=../"$TARGET_REPO_NAME"
 cd "${REPO_DIR}" || exit
 
 branch=source-PR-"$PULL_NUMBER"
-git checkout "$branch"
 
 target_pull_refs="$(cat Pull_refs.txt)"
 
