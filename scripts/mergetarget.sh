@@ -13,11 +13,11 @@ if [ "$PULL_REFS" == "$target_pull_refs" ]
 then
     echo "PR-REF matched successfully. Proceeding with $branch merge"
     git checkout master
-    git rebase --no-ff "$branch"
+    git merge --no-ff --no-commit "$branch"
     git status
-    git commit -m "rebasing $branch branch"
+    git commit -m "merge $branch branch"
     git push -u origin master
-    echo "$branch rebased successfully to master"   
+    echo "$branch Merged successfully to master"   
 else
     echo $branch-PR_REF="$target_pull_refs"
     echo Actual-PR_REF="$PULL_REFS"
