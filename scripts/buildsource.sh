@@ -16,6 +16,4 @@ sed -i "s/SKAFFOLD_BUCKET_NAME/$SKAFFOLD_CONTEXT_UPLOAD/g" skaffold.yaml
 skaffold run
 
 ## Git Push the kustomize files to target-repo
-REPO_DIR=../"$TARGET_REPO_NAME"
-cd "${REPO_DIR}" || exit
 ./scripts/pushtarget.sh
