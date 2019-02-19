@@ -9,12 +9,17 @@ echo Actual-PULL_REFS="$PULL_REFS"
 
 branch=source-PR-"$PULL_NUMBER"
 
-git checkout -b "$branch"
+if git checkout "$branch"; then
+  git checkout "$branch"
+else 
+  git checkout -b "$branch"
+fi
+
 git branch
 echo "checked out to $branch branch"
 
 git add -A
 git status
 git commit -m 'kustomize file and PULL_REF updated'
-git push -f origin "$branch"
+git push origin "$branch"
 echo "Code pushed successfully"

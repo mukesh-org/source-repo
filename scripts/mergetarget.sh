@@ -8,6 +8,8 @@ cd "${REPO_DIR}" || exit
 branch=source-PR-"$PULL_NUMBER"
 
 ## resolve any merge conflicts if there are any
+git checkout $branch
+git pull origin $branch
 git checkout master
 git merge --no-ff --no-commit "$branch"
 git status
