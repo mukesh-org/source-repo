@@ -7,11 +7,20 @@ cd "${REPO_DIR}" || exit
 
 branch=source-PR-"$PULL_NUMBER"
 
-## resolve any merge conflicts if there are any
-git pull origin $branch
-git checkout master
-git merge --no-ff --no-commit "$branch"
-git status
-git commit -m "merge $branch branch"
-git push -u origin master
-echo "$branch Merged successfully to master"
+target_pull_refs="$(cat Pull_refs.txt)"
+
+if [ "$PULL_REFS" == "$target_pull_refs" ]
+then
+    echo "PR-REF matched successfully. Proceeding with $branch merge"
+    git checkout master
+    git merge --no-ff --no-commit "$branch"
+    git status
+    git commit -m "merge $branch branch"
+    git push -u origin master
+    echo "$branch Merged successfully to master"   
+else
+    echo $branch-PR_REF="$target_pull_refs"
+    echo Actual-PR_REF="$PULL_REFS"
+    echo "PR-REF didn't match. either wait for build to finish or rerun the build-job followed by /test job"
+    exit 1
+fi
