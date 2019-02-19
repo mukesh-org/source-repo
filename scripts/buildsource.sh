@@ -9,11 +9,13 @@ gcloud container clusters get-credentials "$CLUSTER_NAME" --zone "$ZONE_NAME" --
 ## Need to clone before skaffold run, so that kustomize manifest can be stored in target-repo dir
 ./scripts/clonetarget.sh
 
+## Running Skaffold inside source-repo
 REPO_DIR=../"$REPO_NAME"
 cd "${REPO_DIR}" || exit
 sed -i "s/SKAFFOLD_BUCKET_NAME/$SKAFFOLD_CONTEXT_UPLOAD/g" skaffold.yaml
 skaffold run
 
+## Git Push the kustomize files to target-repo
 REPO_DIR=../"$TARGET_REPO_NAME"
 cd "${REPO_DIR}" || exit
 ./scripts/pushtarget.sh
