@@ -10,13 +10,23 @@ gcloud container clusters get-credentials "$CLUSTER_NAME" --zone "$ZONE_NAME" --
 ./scripts/clonetarget.sh
 
 ## Running Skaffold inside source-repo
-REPO_DIR=../"$REPO_NAME"
-cd "${REPO_DIR}" || exit
 sed -i "s/SKAFFOLD_BUCKET_NAME/$SKAFFOLD_CONTEXT_UPLOAD/g" skaffold.yaml
 skaffold run
 
 ## Git Push the kustomize files to target-repo
-./scripts/pushtarget.sh
+REPO_DIR=../"$TARGET_REPO_NAME"
+cd "${REPO_DIR}" || exit
+
+echo "$PULL_REFS" > Pull_refs.txt
+echo Actual-PULL_REFS="$PULL_REFS"
+
+branch=source-PR-"$PULL_NUMBER"
+
+git add -A
+git status
+git commit -m 'kustomize file and PULL_REF updated'
+git push origin "$branch"
+echo "Code pushed successfully"
 
 ## Test the YAML file generated using Kubeval
 ./scripts/testtarget.sh
