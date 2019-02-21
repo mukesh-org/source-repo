@@ -1,3 +1,8 @@
 resources:
  - deployment.yaml
  - service.yaml
+configMapGenerator:
+- name: vault-agent-config
+  files:
+  - vault-agent-config.hcl	
+  - consul-template-config.hcl
