@@ -22,7 +22,7 @@ spec:
 
         - name: config
           configMap:
-            name: example-vault-agent-config
+            name: vault-agent-config
             items:
               - key: vault-agent-config.hcl
                 path: vault-agent-config.hcl
