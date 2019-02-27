@@ -2,7 +2,7 @@
 <html>
 <body>
 
-<h1> Development branch into master merge shell check no common context --new check </h1>
+<h1> Development branch into master merge shell check no </h1>
   <h2> Dev branch into master merge shell check fff-test </h2>
 
 <?php
