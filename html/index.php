@@ -3,7 +3,7 @@
 <body>
 
 <h1> Development branch into master merge shell check no </h1>
-  <h2> Dev branch into master merge shell check fff-test </h2>
+  <h2> Dev branch into master merge shell check </h2>
 
 <?php
 echo "Hello Kubernetes! PR presubmit job fast-forward check";
