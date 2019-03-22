@@ -7,7 +7,6 @@
 
 <?php
 echo "Hello Kubernetes! PR presubmit job fast-forward check";
-  echo "Hello Kubernetes! PR presubmit job jobtest for Dev branch!!!";
 ?> 
   
 </body>
