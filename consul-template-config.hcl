@@ -6,7 +6,7 @@ vault {
 }
 
 template {
-  destination = "/etc/secrets/index.html"
+  destination = "/etc/secrets/vault.html"
   contents = <<EOH
   <html>
   <body>
