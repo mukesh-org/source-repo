@@ -107,7 +107,7 @@ spec:
     ####################################################################
         # Actual app container
         - name: php-apache
-          image: gcr.io/searce-sandbox/abc
+          image: nginx
           ports:
           - containerPort: 80
 
