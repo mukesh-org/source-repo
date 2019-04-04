@@ -116,5 +116,4 @@ spec:
 
           volumeMounts:
           - name: shared-data
-            mountPath: "/var/www/html/vault.html"
-            subPath: "vault.html"
+            mountPath: "/tmp"
