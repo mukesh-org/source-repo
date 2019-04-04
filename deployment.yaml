@@ -45,6 +45,7 @@ spec:
         # kubernetes auth method and puts the resulting token on the filesystem.
         - name: vault-agent-auth
           image: vault
+          resources: {}
 
           volumeMounts:
             - name: vault-token
@@ -77,6 +78,7 @@ spec:
         # them as files on disk.
         - name: consul-template
           image: hashicorp/consul-template
+          resources: {}
           imagePullPolicy: Always
 
           volumeMounts:
@@ -108,9 +110,11 @@ spec:
         # Actual app container
         - name: php-apache
           image: gcr.io/searce-sandbox/abc
+          resources: {}
           ports:
           - containerPort: 80
 
           volumeMounts:
           - name: shared-data
-            mountPath: /var/www/html
+            mountPath: "/var/www/html/vault.html"
+            subPath: "vault.html"
