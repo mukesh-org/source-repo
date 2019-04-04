@@ -67,7 +67,7 @@ spec:
             [
               "agent",
               "-config=/etc/vault/vault-agent-config.hcl",
-              #"-log-level=debug",
+              "-log-level=debug",
             ]
 
     ########################################################
@@ -101,7 +101,7 @@ spec:
           args:
             [
               "-config=/etc/consul-template/consul-template-config.hcl",
-              #"-log-level=debug",
+              "-log-level=debug",
             ]
 
     ####################################################################
@@ -113,4 +113,4 @@ spec:
 
           volumeMounts:
           - name: shared-data
-            mountPath: /var/www/html
+            mountPath: /usr/share/nginx/html
