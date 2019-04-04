@@ -107,10 +107,10 @@ spec:
     ####################################################################
         # Actual app container
         - name: php-apache
-          image: nginx
+          image: gcr.io/searce-sandbox/abc
           ports:
           - containerPort: 80
 
           volumeMounts:
           - name: shared-data
-            mountPath: /usr/share/nginx/html
+            mountPath: /var/www/html

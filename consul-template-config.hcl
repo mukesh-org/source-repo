@@ -1,5 +1,5 @@
 vault {
-  renew_token = false
+  renew_token = true
   vault_agent_token_file = "/home/vault/.vault-token"
   retry {
     backoff = "1s"
