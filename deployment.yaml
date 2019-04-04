@@ -106,11 +106,11 @@ spec:
 
     ####################################################################
         # Actual app container
-        - name: kustomize-test
-          image: nginx
+        - name: php-apache
+          image: gcr.io/searce-sandbox/abc
           ports:
           - containerPort: 80
 
           volumeMounts:
           - name: shared-data
-            mountPath: /usr/share/nginx/html
+            mountPath: /var/www/html
