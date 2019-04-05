@@ -6,7 +6,7 @@
   <h2> Dev branch into master merge shell check bp check</h2>
 
 <?php
-echo "Hello Kubernetes! PR presubmit job fast-forward check 321";
+echo "Hello Kubernetes!";
 ?> 
   
 </body>
