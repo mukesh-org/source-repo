@@ -3,12 +3,13 @@ kind: Config
 
 build:
   artifacts:
-  io/s
+  - image: gcr.io/searce-sandbox/abc
+
     
       context: .
       #- image: gcr.io/searce-sandbox/xyz
       #context: .
-  kaiko:
+  kaniko:
     buildContext:
       gcsBucket: SKAFFOLD_BUCKET_NAME
     pullSecret: /secrets/gcloud/skaffold-secret.json
