@@ -3,7 +3,7 @@
 <body>
 
 <h1> Development branch into master branch </h1>
-  <h2> Dev bar, give me green</h2>
+<font color="green">Dev bar, give me green</font>
 
 <?php
 echo "Dev Jack, Increase my font";
