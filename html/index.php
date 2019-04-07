@@ -2,8 +2,8 @@
 <html>
 <body>
 
-<h1> Development branch into master branch </h1>
-<font color="red">Dev foo, give me red</font>
+<h1> Sample branch into master branch </h1>
+<h1> Dev foo, my color is Blue now </h1>
 
 <?php
 echo "Dev Jack, Increase my font";
