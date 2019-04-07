@@ -3,9 +3,7 @@ kind: Config
 
 build:
   artifacts:
-    - image: gcr.io/searce-sandbox/abc
-
-    
+    - image: gcr.io/searce-sandbox/abc    
       context: .
       #- image: gcr.io/searce-sandbox/xyz
       #context: .
