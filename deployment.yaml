@@ -57,7 +57,7 @@ spec:
           
           env:
             - name: VAULT_ADDR
-              value: https://35.193.0.64:443
+              value: https://35.222.149.11:443
             - name: VAULT_CACERT
               value: /etc/vault/tls/ca.crt
             - name: VAULT_ROLE
@@ -95,7 +95,7 @@ spec:
             - name: HOME
               value: /home/vault
             - name: VAULT_ADDR
-              value: https://35.193.0.64:443
+              value: https://35.222.149.11:443
             - name: VAULT_CACERT
               value: /etc/vault/tls/ca.crt
 
