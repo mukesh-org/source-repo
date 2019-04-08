@@ -2,11 +2,11 @@
 <html>
 <body>
 
-<h1> Sample branch into master branch </h1>
-<h2> Dev bar, my color is Green </h2>
+<h1> I am Demo.php </h1>
+<h2> Dev Bar, my color is Black </h2>
 
 <?php
-echo "Dev Jack, Decreased the above font";
+echo "Dev Jack, give me a color";
 ?> 
   
 </body>
