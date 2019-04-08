@@ -7,6 +7,7 @@
 
 <?php
 echo "Dev Jack, Decreased the above font";
+  echo "Dev Jack, my color is Purple now";
 ?> 
   
 </body>
