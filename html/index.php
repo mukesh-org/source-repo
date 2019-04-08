@@ -6,7 +6,7 @@
 <h1> Dev foo, my color is Blue now </h1>
 
 <?php
-echo "Dev Jack, Increase my font";
+echo "Dev Jack, Decreased the above font";
 ?> 
   
 </body>
