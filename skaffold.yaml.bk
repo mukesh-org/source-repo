@@ -1,0 +1,17 @@
+apiVersion: skaffold/v1beta4
+kind: Config
+
+build:
+  artifacts:
+    - image: gcr.io/searce-sandbox/abc    
+      context: .
+      #- image: gcr.io/searce-sandbox/xyz
+      #context: .
+  kaniko:
+    buildContext:
+      gcsBucket: SKAFFOLD_BUCKET_NAME
+    pullSecret: /secrets/gcloud/skaffold-secret.json
+    cache: {}
+
+deploy:
+   kustomize: {}
