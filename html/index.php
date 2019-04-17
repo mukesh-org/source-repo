@@ -3,7 +3,7 @@
 <body>
 
 <h1> I am index.php </h1>
-<h2> Dev Foo, my color is 3.0!! </h2>
+<h2> Dev Foo, my color is INDIGO!! </h2>
 
 <?php
 echo "Dev Jack, my color is BLACK";
