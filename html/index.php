@@ -6,7 +6,7 @@
 <h2> Dev Foo, my color is INDIGO!! </h2>
 
 <?php
-echo "Dev Jack, my color is RED";
+echo "Dev Jack, my color is PURPLE";
 ?> 
   
 </body>
