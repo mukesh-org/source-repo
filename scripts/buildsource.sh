@@ -11,6 +11,7 @@ gcloud container clusters get-credentials "$CLUSTER_NAME" --zone "$ZONE_NAME" --
 
 ## Running Skaffold inside source-repo
 sed -i "s/SKAFFOLD_BUCKET_NAME/$SKAFFOLD_CONTEXT_UPLOAD/g" skaffold.yaml
+sed -i "s/PROJECT_ID/$PROJECT_ID/g" skaffold.yaml
 skaffold run
 
 ## Git Push the kustomize files to target-repo
