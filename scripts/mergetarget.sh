@@ -13,11 +13,10 @@ if [ "$PULL_REFS" == "$target_pull_refs" ]
 then
     echo "PR-REF matched successfully. Proceeding with $branch merge"
     git checkout master
-    git merge --ff-only origin master || die "cannot fast-forward our master"
-    git merge -X theirs origin $branch || die "complex merge conflict"
+    git merge --ff-only origin $branch || die "cannot fast-forward"
     git status
     git push -u origin master
-    echo "$branch Merged successfully to master"   
+    echo "$branch Merged successfully to master"
 else
     echo $branch-PR_REF="$target_pull_refs"
     echo Actual-PR_REF="$PULL_REFS"
