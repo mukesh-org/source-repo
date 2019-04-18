@@ -34,5 +34,5 @@ if git checkout "$branch"; then
 else 
   git checkout -b "$branch"
 fi
-
 git branch
+git rebase master
