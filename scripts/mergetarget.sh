@@ -8,6 +8,7 @@ cd "${REPO_DIR}" || exit
 branch=source-PR-"$PULL_NUMBER"
 
 target_pull_refs="$(cat Pull_refs.txt)"
+sleep 70
 
 if [ "$PULL_REFS" == "$target_pull_refs" ]
 then
