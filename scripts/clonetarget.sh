@@ -36,3 +36,4 @@ else
 fi
 git branch
 git rebase master
+git rebase --skip
