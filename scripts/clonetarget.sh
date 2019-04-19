@@ -37,8 +37,8 @@ fi
 
 git branch
 
-if git rebase master; then
-  git rebase master
-else
-  git rebase --skip
-fi
+{ # 'try' block
+    git rebase master
+} || { # 'catch' block
+    git rebase --skip
+}
