@@ -34,6 +34,11 @@ if git checkout "$branch"; then
 else 
   git checkout -b "$branch"
 fi
+
 git branch
-git rebase master
-git rebase --skip
+
+if git rebase master; then
+  git rebase master
+else
+  git rebase --skip
+fi
