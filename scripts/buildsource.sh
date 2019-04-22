@@ -11,6 +11,15 @@ gcloud container clusters get-credentials "$CLUSTER_NAME" --zone "$ZONE_NAME" --
 
 ## Running Skaffold inside source-repo
 sed -i "s/SKAFFOLD_BUCKET_NAME/$SKAFFOLD_CONTEXT_UPLOAD/g" skaffold.yaml
+sed -i "s/PROJECT_ID/$PROJECT_ID/g" skaffold.yaml
+
+branch=source-PR-"$PULL_NUMBER"
+{
+git rebase master && echo "rebase master performed"
+} || {
+git rebase --skip && echo "skipped the conflicts in $branch"
+}
+
 skaffold run
 
 ## Git Push the kustomize files to target-repo
@@ -19,8 +28,6 @@ cd "${REPO_DIR}" || exit
 
 echo "$PULL_REFS" > Pull_refs.txt
 echo Actual-PULL_REFS="$PULL_REFS"
-
-branch=source-PR-"$PULL_NUMBER"
 
 git add -A
 git status

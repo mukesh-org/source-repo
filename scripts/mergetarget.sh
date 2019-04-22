@@ -8,12 +8,13 @@ cd "${REPO_DIR}" || exit
 branch=source-PR-"$PULL_NUMBER"
 
 target_pull_refs="$(cat Pull_refs.txt)"
+sleep 70
 
 if [ "$PULL_REFS" == "$target_pull_refs" ]
 then
     echo "PR-REF matched successfully. Proceeding with $branch merge"
     git checkout master
-    git merge --ff-only origin $branch || die "cannot fast-forward"
+    git merge --ff-only origin $branch || echo "cannot fast-forward"
     git status
     git push -u origin master
     echo "$branch Merged successfully to master"
