@@ -35,4 +35,10 @@ else
   git checkout -b "$branch"
 fi
 
+{
+git rebase master && echo "rebase master performed"
+} || {
+git rebase --skip && echo "skipped the conflicts in $branch"
+}
+
 git branch
