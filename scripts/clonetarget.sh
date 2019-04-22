@@ -36,9 +36,3 @@ else
 fi
 
 git branch
-
-{ # 'try' block
-    git rebase master
-} || { # 'catch' block
-    git rebase --skip
-}
