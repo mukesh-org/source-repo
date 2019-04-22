@@ -14,11 +14,6 @@ sed -i "s/SKAFFOLD_BUCKET_NAME/$SKAFFOLD_CONTEXT_UPLOAD/g" skaffold.yaml
 sed -i "s/PROJECT_ID/$PROJECT_ID/g" skaffold.yaml
 
 branch=source-PR-"$PULL_NUMBER"
-{
-git rebase master && echo "rebase master performed"
-} || {
-git rebase --skip && echo "skipped the conflicts in $branch"
-}
 
 skaffold run
 
