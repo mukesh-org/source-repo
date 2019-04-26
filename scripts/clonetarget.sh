@@ -29,16 +29,22 @@ cd "${REPO_DIR}" || exit
 
 branch=source-PR-"$PULL_NUMBER"
 
-if git checkout "$branch"; then
-  git checkout "$branch"
-else 
-  git checkout -b "$branch"
-fi
-
 {
-git rebase master && echo "rebase master performed"
+git checkout "$branch"
 } || {
-git rebase --skip && echo "skipped the conflicts in $branch"
+git checkout -b "$branch"
 }
 
 git branch
+
+# if git checkout "$branch"; then
+#   git checkout "$branch"
+# else 
+#   git checkout -b "$branch"
+# fi
+
+# {
+# git rebase master && echo "rebase with master performed"
+# } || {
+# git rebase --skip && echo "skipped the conflicts in $branch"
+# }
