@@ -10,8 +10,8 @@ build:
           gcsBucket: SKAFFOLD_BUCKET_NAME
         cache: {}
   cluster:
-    # pullSecret: /secrets/gcloud/skaffold-secret.json
-    pullSecretName: skaffold-secret
+    pullSecret: /secrets/gcloud/skaffold-secret.json
+    # pullSecretName: kaniko-secret
 
 deploy:
   kustomize: {}
