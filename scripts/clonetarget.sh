@@ -36,9 +36,3 @@ git checkout -b "$branch"
 }
 
 git branch
-
-{
-git rebase master && echo "rebase with master performed"
-} || {
-git rebase --skip && echo "skipped the conflicts in $branch"
-}
