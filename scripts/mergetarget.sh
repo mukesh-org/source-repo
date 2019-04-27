@@ -16,7 +16,12 @@ then
     echo "PR-REF matched successfully. Proceeding with $branch merge"
     git checkout master
     # git merge --ff-only origin $branch || (echo "cannot fast-forward" && exit 1)
-    git rebase $branch || (echo "cannot rebase" && exit 1)
+    # git rebase $branch || (echo "cannot rebase" && exit 1)
+    (
+    git rebase $branch && echo "rebase with master performed"
+    ) || (
+    git rebase --skip && echo "skipped the conflicts in $branch"
+    )
     git status
     git push -u origin master
     echo "$branch Merged successfully to master"
