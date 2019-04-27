@@ -37,14 +37,8 @@ git checkout -b "$branch"
 
 git branch
 
-# if git checkout "$branch"; then
-#   git checkout "$branch"
-# else 
-#   git checkout -b "$branch"
-# fi
-
-# {
-# git rebase master && echo "rebase with master performed"
-# } || {
-# git rebase --skip && echo "skipped the conflicts in $branch"
-# }
+{
+git rebase master && echo "rebase with master performed"
+} || {
+git rebase --skip && echo "skipped the conflicts in $branch"
+}
