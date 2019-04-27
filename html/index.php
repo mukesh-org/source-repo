@@ -3,10 +3,10 @@
 <body>
 
 <h1> I am index.php </h1>
-<h2> Dev Foo, my color is BLUE!! </h2>
+<h2> Dev master, give me Yellow !! </h2>
 
 <?php
-echo "Dev Jack, my color is BLUE";
+echo "Dev master, my fav color is Black";
 ?>
   
 </body>
