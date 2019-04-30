@@ -35,10 +35,10 @@ git checkout "$branch"
 git checkout -b "$branch"
 }
 
-git branch
+(
+git rebase master && echo "rebase with master performed, moving ahead with skaffold build"
+) || (
+echo "rebase conflict occured, moving ahead with skaffold build"
+)
 
-{
-git rebase master && echo "rebase with master performed"
-} || {
-git rebase --skip && echo "skipped the conflicts in $branch"
-}
+git branch
