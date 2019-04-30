@@ -26,7 +26,7 @@ echo Actual-PULL_REFS="$PULL_REFS"
 
 git add -A
 git status
-git commit -m "kustomize and PULL_REF file updated for $branch"
+(git rebase --continue) || (git commit -m "kustomize and PULL_REF file updated for $branch")
 git push origin "$branch"
 echo "Code pushed successfully to $branch"
 
