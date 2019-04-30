@@ -23,12 +23,14 @@ cd "${REPO_DIR}" || exit
 
 echo "$PULL_REFS" > Pull_refs.txt
 echo Actual-PULL_REFS="$PULL_REFS"
-
+echo "================== Performing Git Operations ==============="
 git add -A
 git status
-(git rebase --continue) || (git commit -m "kustomize and PULL_REF file updated for $branch")
+echo "============ modified files staged, moving ahead with rebase ==============="
+(git rebase --continue && echo "git rebase continued") || (git commit -m "kustomize and PULL_REF file updated for $branch")
+echo "=========== rebase complete, pushing changes to remote ==============="
 git push origin "$branch"
-echo "Code pushed successfully to $branch"
+echo "=========== Code pushed successfully to $branch ==============="
 
 ## Test the YAML file generated using Kubeval
 REPO_DIR=../"$REPO_NAME"
