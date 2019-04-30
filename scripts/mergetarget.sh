@@ -13,18 +13,12 @@ target_pull_refs="$(cat Pull_refs.txt)"
 
 if [ "$PULL_REFS" == "$target_pull_refs" ]
 then
-    echo "PR-REF matched successfully. Proceeding with $branch merge"
+    echo "PR-REF matched successfully. Proceeding with $branch fast-forward merge"
     git checkout master
-    # git merge --ff-only origin $branch || (echo "cannot fast-forward" && exit 1)
-    # git rebase $branch || (echo "cannot rebase" && exit 1)
-    (
-    git rebase $branch && echo "rebase with master performed"
-    ) || (
-    git rebase --skip && echo "skipped the conflicts in $branch"
-    )
+    git merge --ff-only origin $branch || (echo "cannot fast-forward" && exit 1)
     git status
     git push -u origin master
-    echo "$branch Merged successfully to master"
+    echo "$branch merged and pushed successfully to master"
 else
     echo "$branch"-PR_REF="$target_pull_refs"
     echo Actual-PR_REF="$PULL_REFS"
