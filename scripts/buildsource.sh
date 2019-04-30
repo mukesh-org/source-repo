@@ -29,7 +29,7 @@ git status
 echo "============ modified files staged, moving ahead with rebase ==============="
 (git rebase --continue && echo "git rebase continued") || (git commit -m "kustomize and PULL_REF file updated for $branch")
 echo "=========== rebase complete, pushing changes to remote ==============="
-git push origin "$branch"
+git push --force-with-lease origin "$branch"
 echo "=========== Code pushed successfully to $branch ==============="
 
 ## Test the YAML file generated using Kubeval
