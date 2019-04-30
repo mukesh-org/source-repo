@@ -8,8 +8,6 @@ cd "${REPO_DIR}" || exit
 branch=source-PR-"$PULL_NUMBER"
 
 target_pull_refs="$(cat Pull_refs.txt)"
-# echo sleep 60 sec
-# sleep 60
 
 if [ "$PULL_REFS" == "$target_pull_refs" ]
 then
@@ -22,6 +20,6 @@ then
 else
     echo "$branch"-PR_REF="$target_pull_refs"
     echo Actual-PR_REF="$PULL_REFS"
-    echo "PR-REF didn't match. either wait for build to finish or rerun the build-job followed by /approve"
+    echo "PR-REF didn't match. either wait for build to finish or rerun the build by /build followed by /approve"
     exit 1
 fi

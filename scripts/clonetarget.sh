@@ -22,7 +22,7 @@ repository="git@github.com:$GITHUB_ORG_NAME/$TARGET_REPO_NAME.git"
 localFolder="/home/prow/go/src/github.com/$GITHUB_ORG_NAME/$TARGET_REPO_NAME"
 
 git clone "$repository" "$localFolder"
-echo "Target repo cloned successfully"
+echo "==== Target repo cloned successfully ===="
 
 REPO_DIR=../"$TARGET_REPO_NAME"
 cd "${REPO_DIR}" || exit
@@ -36,9 +36,9 @@ git checkout -b "$branch"
 }
 
 (
-git rebase master && echo "rebase with master performed, moving ahead with skaffold build"
+git rebase master && echo "=== rebase with master performed, moving ahead with skaffold build ==="
 ) || (
-echo "rebase conflict occured, moving ahead with skaffold build"
+echo "========= rebase conflict occured, moving ahead with skaffold build ========="
 )
 
 git branch
