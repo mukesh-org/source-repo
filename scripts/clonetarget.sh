@@ -36,7 +36,7 @@ git checkout -b "$branch"
 }
 
 (
-git rebase master && echo "rebase with master performed"
+git rebase master && echo "rebase with master performed, moving ahead with skaffold build"
 ) || (
 echo "rebase conflict occured, moving ahead with skaffold build"
 )
