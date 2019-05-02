@@ -27,9 +27,10 @@ echo "========== Performing Git Operations ============="
 git add -A
 git status
 echo "========== Modified files staged, moving with rebase continue =========="
-sleep 60m
-(git rebase --continue && echo "git rebase continued") || (git commit -m "kustomize and PULL_REF file updated for $branch")
-echo "========== Rebase complete, pushing changes to remote ============"
+#sleep 60m
+#(git rebase --continue && echo "git rebase continued") || 
+(git commit -m "kustomize and PULL_REF file updated for $branch")
+echo "========== Commit added, pushing changes to remote ============"
 git push --force-with-lease origin "$branch"
 echo "========== Code pushed successfully to $branch ============"
 
