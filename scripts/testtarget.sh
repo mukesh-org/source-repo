@@ -10,11 +10,11 @@ target_pull_refs="$(cat Pull_refs.txt)"
 
 if [ "$PULL_REFS" == "$target_pull_refs" ]
 then
-    echo "PR-REF matched successfully. Proceeding with YAML test"
+    echo "==== PR-REF matched successfully. Proceeding with YAML test ===="
     kubeval "${REPO_DIR}"/overlays/production/kustomization.yaml
-    echo "Kubeval Test successful"
+    echo "==== Kubeval Test successful ===="
 else
-    echo "PR-REF didn't match. wait for build job to finish and RE-RUN test job"
+    echo "==== PR-REF didn't match. Wait for build job to finish or RE-RUN build job with /build ===="
     echo $branch-PR_REF="$target_pull_refs"
     echo Actual-PR_REF="$PULL_REFS"
     exit 1
