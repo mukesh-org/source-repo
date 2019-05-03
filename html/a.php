@@ -3,9 +3,9 @@
 <body>
 
 <h1> I am a.php </h1>
-<h2> Give me Red </h2>
+<h2> Give me ORANGE </h2>
 <?php
-echo "Dev A, my fav color is REDD";
+echo "Dev A, my fav color is ORANGE";
 ?> 
   
 </body>
