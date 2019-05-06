@@ -14,11 +14,8 @@ build:
     # pullSecret: /secrets/google/kaniko-secret.json
     pullSecretName: kaniko-secret
     namespace: default
-<<<<<<< HEAD
     dockerConfig: 
       secretName: kaniko-secret
-=======
->>>>>>> 32f691852d0467004402879fc92917ca2b107461
 
 deploy:
   kustomize: {}
