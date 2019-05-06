@@ -3,15 +3,19 @@ kind: Config
 
 build:
   artifacts:
-    - image: gcr.io/PROJECT_ID/abc
-      context: .
-      kaniko:
-        buildContext:
-          gcsBucket: SKAFFOLD_BUCKET_NAME
-        cache: {}
+  - image: gcr.io/PROJECT_ID/abc
+    context: .
+    kaniko:
+      dockerfile: Dockerfile
+      buildContext:
+        gcsBucket: SKAFFOLD_BUCKET_NAME
+      cache: {}
   cluster:
     # pullSecret: /secrets/gcloud/skaffold-secret.json
     pullSecretName: kaniko-secret
+    namespace: default
+    dockerConfig: 
+      secretName: kaniko-secret
 
 deploy:
   kustomize: {}
