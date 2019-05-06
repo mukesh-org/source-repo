@@ -11,7 +11,7 @@ build:
         cache: {}
   cluster:
     # pullSecret: /secrets/gcloud/skaffold-secret.json
-    pullSecretName: kaniko-secret
+    pullSecretName: kaniko-secret-temp
 
 deploy:
   kustomize: {}
